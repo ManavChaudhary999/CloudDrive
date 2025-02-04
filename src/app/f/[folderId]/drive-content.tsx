@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react"
 import { Upload, ChevronRight } from "lucide-react"
 import { Button } from "~/components/ui/button"
-import { FileRow, FolderRow } from "./filerow"
+import { FileRow, FolderRow } from "./file-row"
 import type { DB_FileType, DB_FolderType } from "~/server/db/schema"
 
 export default function DriveContent(props: {
