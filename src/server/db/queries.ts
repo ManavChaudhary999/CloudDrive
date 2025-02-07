@@ -33,8 +33,7 @@ export const QUERIES = {
         .where(eq(foldersSchema.id, currentId));
 
       if (!folder[0]) {
-        // throw new Error("Parent folder not found");
-        return parents;
+        throw new Error("Parent folder not found");
       }
 
       parents.unshift(folder[0]);
