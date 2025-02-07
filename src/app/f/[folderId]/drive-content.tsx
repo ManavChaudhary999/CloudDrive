@@ -5,12 +5,15 @@ import { FileRow, FolderRow } from "./file-row"
 import type { DB_FileType, DB_FolderType } from "~/server/db/schema"
 import Link from "next/link"
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs"
+import { UploadButton } from "~/components/uploadthing"
+import { useRouter } from "next/navigation"
 
 export default function DriveContent(props: {
     files: DB_FileType[],
     folders: DB_FolderType[],
     parents: DB_FolderType[],
 }) {
+  const navigate = useRouter();
 
   const breadcrumbs: unknown[] = [];
 
@@ -67,6 +70,12 @@ export default function DriveContent(props: {
             ))}
           </ul>
         </div>
+        <UploadButton
+            endpoint="imageUploader"
+            onClientUploadComplete={() => {
+              navigate.refresh();
+            }}
+        />
       </div>
     </div>
   )
