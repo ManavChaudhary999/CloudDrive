@@ -16,8 +16,6 @@ export default function DriveContent(props: {
 }) {
   const navigate = useRouter();
 
-  const breadcrumbs: unknown[] = [];
-
   const handleUpload = () => {
     alert("Upload functionality would be implemented here")
   }
